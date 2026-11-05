@@ -1,0 +1,47 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = true
+palette = 'catppuccin_mocha'
+
+format = """
+$directory$git_branch$git_status$python$cmd_duration
+$character"""
+
+[directory]
+style = 'bold lavender'
+truncation_length = 3
+truncation_symbol = '…/'
+
+[git_branch]
+symbol = " "
+style = 'mauve'
+format = '[$symbol$branch]($style) '
+
+[git_status]
+style = 'peach'
+format = '[$all_status$ahead_behind]($style) '
+
+[python]
+symbol = 'py '
+style = 'overlay1'
+format = '[$symbol$virtualenv]($style) '
+detect_extensions = []
+detect_files = []
+detect_folders = []
+
+[cmd_duration]
+min_time = 2000
+style = 'overlay1'
+format = '[$duration]($style)'
+
+[character]
+success_symbol = '[❯](bold green)'
+error_symbol = '[❯](bold red)'
+
+[palettes.catppuccin_mocha]
+lavender = '#b4befe'
+mauve = '#cba6f7'
+peach = '#fab387'
+green = '#a6e3a1'
+red = '#f38ba8'
+overlay1 = '#7f849c'

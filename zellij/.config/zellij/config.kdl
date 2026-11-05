@@ -1,0 +1,7 @@
+theme "catppuccin-mocha"
+default_layout "compact"
+pane_frames false
+show_startup_tips false
+show_release_notes false
+session_serialization true
+copy_on_select true
