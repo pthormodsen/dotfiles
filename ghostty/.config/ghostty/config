@@ -19,3 +19,8 @@ copy-on-select = clipboard
 # Norwegian layout: left Option acts as Alt (word navigation, Zellij shortcuts).
 # Right Option still types @ { } [ ] | \ $
 macos-option-as-alt = left
+
+# Ghostty's defaults turn these into ESC b / ESC f, which Zellij reads as Alt+b
+# and Alt+f (toggle floating panes). Send real alt+arrows instead.
+keybind = alt+left=unbind
+keybind = alt+right=unbind

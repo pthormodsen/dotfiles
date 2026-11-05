@@ -5,10 +5,15 @@ show_startup_tips false
 show_release_notes false
 session_serialization true
 copy_on_select true
+support_kitty_keyboard_protocol true
 
-// Alt+arrows for moving focus come from Zellij's default keybinds.
 keybinds {
     shared_except "locked" {
+        // Ghostty must not remap alt+left/right, or these never fire (see its config).
+        bind "Alt Left" { MoveFocus "Left"; }
+        bind "Alt Right" { MoveFocus "Right"; }
+        bind "Alt Up" { MoveFocus "Up"; }
+        bind "Alt Down" { MoveFocus "Down"; }
         // As of 0.45.1, NewPane "Up" and "Left" are accepted but split down and
         // right, so split the other way and move the new pane into place.
         bind "Alt w" { NewPane "Down"; MovePane "Up"; }

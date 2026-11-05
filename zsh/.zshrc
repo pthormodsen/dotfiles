@@ -7,6 +7,9 @@ setopt SHARE_HISTORY HIST_IGNORE_ALL_DUPS HIST_IGNORE_SPACE
 # Behaviour
 setopt AUTO_CD INTERACTIVE_COMMENTS
 bindkey -e
+# Word navigation with Option+Left/Right (Ghostty sends these as plain alt+arrows)
+bindkey '^[[1;3D' backward-word
+bindkey '^[[1;3C' forward-word
 
 # Completion
 autoload -Uz compinit && compinit
