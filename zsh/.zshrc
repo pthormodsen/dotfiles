@@ -66,6 +66,15 @@ alias ..='cd ..'
 alias zj='zellij attach --create main'
 alias tailscale='/Applications/Tailscale.app/Contents/MacOS/Tailscale'
 
+# Quitting yazi with q leaves the shell in the folder being browsed; Q doesn't
+function y() {
+	local tmp cwd; tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+	command yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd" || builtin true
+	command rm -f -- "$tmp"
+}
+
 alias gst='git status'
 alias ga='git add'
 alias gc='git commit'

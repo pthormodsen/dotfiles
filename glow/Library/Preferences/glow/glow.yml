@@ -1,0 +1,4 @@
+# glow reads this path on macOS, not ~/.config/glow.
+# It doesn't expand ~ or $HOME here, so the style needs an absolute path.
+style: "/Users/patrik/Library/Preferences/glow/catppuccin-mocha.json"
+pager: false

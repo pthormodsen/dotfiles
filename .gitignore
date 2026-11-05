@@ -1,1 +1,3 @@
 .DS_Store
+# Restored from package.toml by `ya pkg install`
+yazi/.config/yazi/flavors/

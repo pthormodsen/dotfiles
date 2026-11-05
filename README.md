@@ -1,14 +1,19 @@
 # dotfiles
 
-Ghostty, zsh, Starship, Zellij and Atuin, managed with GNU Stow.
+Ghostty, zsh, Starship, Zellij, Atuin, glow and Yazi, managed with GNU Stow.
 
 ## New machine
 
 ```sh
 brew bundle
-stow --target="$HOME" ghostty zsh starship zellij atuin
+stow --target="$HOME" ghostty zsh starship zellij atuin glow yazi
 atuin import zsh
+ya pkg install
 ```
+
+If your username isn't `patrik`, update the absolute `style` path in
+`glow/Library/Preferences/glow/glow.yml`. glow doesn't expand `~` or `$HOME`
+there.
 
 Stow refuses to overwrite existing files, so move any existing configs out of
 the way first.
