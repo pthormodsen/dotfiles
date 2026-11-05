@@ -57,6 +57,7 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 # Aliases
+export EZA_COLORS='bu=0' # Show build files like README.md and Brewfile as normal files
 alias ls='eza --group-directories-first'
 alias ll='eza -l --group-directories-first --no-permissions --no-user'
 alias la='eza -la --group-directories-first --no-permissions --no-user'
@@ -86,3 +87,7 @@ _zsh_autosuggest_strategy_atuin_directory() {
 ZSH_AUTOSUGGEST_STRATEGY=(atuin_directory match_prev_cmd completion)
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+ZSH_HIGHLIGHT_STYLES[path]=none
+ZSH_HIGHLIGHT_STYLES[path_prefix]=none
+ZSH_HIGHLIGHT_STYLES[autodirectory]=fg=green
+ZSH_HIGHLIGHT_STYLES[suffix-alias]=fg=green
