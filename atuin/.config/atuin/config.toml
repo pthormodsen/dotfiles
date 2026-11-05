@@ -1,0 +1,3 @@
+# Local only: no account, sync or update checks.
+auto_sync = false
+update_check = false

@@ -1,12 +1,13 @@
 # dotfiles
 
-Ghostty, zsh, Starship and Zellij, managed with GNU Stow.
+Ghostty, zsh, Starship, Zellij and Atuin, managed with GNU Stow.
 
 ## New machine
 
 ```sh
 brew bundle
-stow --target="$HOME" ghostty zsh starship zellij
+stow --target="$HOME" ghostty zsh starship zellij atuin
+atuin import zsh
 ```
 
 Stow refuses to overwrite existing files, so move any existing configs out of

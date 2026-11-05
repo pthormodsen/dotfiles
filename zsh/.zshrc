@@ -75,5 +75,14 @@ alias gp='git push'
 
 # Prompt and plugins
 eval "$(starship init zsh)"
+eval "$(atuin init zsh --disable-up-arrow --disable-ctrl-r --disable-ai)"
+
+# Suggest the latest command run in this folder that starts with what's typed.
+# Set after atuin's init, which adds its own strategy.
+_zsh_autosuggest_strategy_atuin_directory() {
+    suggestion=$(ATUIN_QUERY="$1" atuin search --cmd-only --author '$all-user' --limit 1 \
+        --filter-mode directory --search-mode prefix 2>/dev/null)
+}
+ZSH_AUTOSUGGEST_STRATEGY=(atuin_directory match_prev_cmd completion)
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

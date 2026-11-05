@@ -7,6 +7,7 @@ brew "fzf"
 brew "fzf-tab"
 brew "eza"
 brew "bat"
+brew "atuin"
 
 cask "ghostty"
 cask "font-jetbrains-mono-nerd-font"
