@@ -5,3 +5,27 @@ show_startup_tips false
 show_release_notes false
 session_serialization true
 copy_on_select true
+
+// Alt+arrows for moving focus come from Zellij's default keybinds.
+keybinds {
+    shared_except "locked" {
+        // As of 0.45.1, NewPane "Up" and "Left" are accepted but split down and
+        // right, so split the other way and move the new pane into place.
+        bind "Alt w" { NewPane "Down"; MovePane "Up"; }
+        bind "Alt a" { NewPane "Right"; MovePane "Left"; }
+        bind "Alt s" { NewPane "Down"; }
+        bind "Alt d" { NewPane "Right"; }
+        bind "Alt x" { CloseFocus; }
+        bind "Alt z" { ToggleFocusFullscreen; }
+        bind "Alt t" { NewTab; }
+        bind "Alt 1" { GoToTab 1; }
+        bind "Alt 2" { GoToTab 2; }
+        bind "Alt 3" { GoToTab 3; }
+        bind "Alt 4" { GoToTab 4; }
+        bind "Alt 5" { GoToTab 5; }
+        bind "Alt 6" { GoToTab 6; }
+        bind "Alt 7" { GoToTab 7; }
+        bind "Alt 8" { GoToTab 8; }
+        bind "Alt 9" { GoToTab 9; }
+    }
+}
